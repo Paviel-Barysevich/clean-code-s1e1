@@ -17,8 +17,9 @@ body {
   font-family: "Fantasy", cursive;
 }
 
-@media (max-width:768px) {
-  .header__wrapper { text-align: center;
+@media (max-width: 768px) {
+  .header__wrapper {
+    text-align: center;
 }
 }
 .main__wrapper {
