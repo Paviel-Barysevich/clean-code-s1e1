@@ -11,6 +11,10 @@ section {
   display: block;
 }
 
+h1 {
+  display: none;
+}
+
 .header__wrapper {
   width: 500px;
   margin: 0 auto;
