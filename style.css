@@ -37,13 +37,13 @@ body {
   padding-top: 20px;
 }
 ul {
-  margin:0;
+  margin: 0;
   padding: 0px;
   list-style: none;
 }
 
 input,button{
-  outline:none;
+  outline: none;
 }
 .button {
   background: none;
@@ -133,14 +133,14 @@ label {
 
 /* Edit Task */
 .item > input[type="text"] {
-  display:none
+  display: none
 }
 
 .item__task-edition > input[type="text"] {
-  display:inline-block;
-  width:224px
+  display: inline-block;
+  width: 224px
 }
 
 .item__task-edition > label {
-  display:none;
+  display: none;
 }
