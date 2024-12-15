@@ -5,6 +5,12 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+header,
+main,
+section {
+  display: block;
+}
+
 .header__wrapper {
   width: 500px;
   margin: 0 auto;
