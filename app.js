@@ -49,8 +49,6 @@ function createNewTaskElement(taskString) {
 }
 
 function addTask() {
-  console.log("Add Task...");
-
   if (!taskInput.value) return;
 
   const listItem = createNewTaskElement(taskInput.value);
@@ -62,9 +60,6 @@ function addTask() {
 }
 
 function editTask() {
-  console.log("Edit Task...");
-  console.log("Change 'edit' to 'save'");
-
   const listItem = this.parentNode;
   const editInput = listItem.querySelector(".item__input");
   const label = listItem.querySelector(".item__label");
@@ -83,8 +78,6 @@ function editTask() {
 }
 
 function deleteTask() {
-  console.log("Delete Task...");
-
   const listItem = this.parentNode;
   const ul = listItem.parentNode;
 
@@ -92,8 +85,6 @@ function deleteTask() {
 }
 
 function taskCompleted() {
-  console.log("Complete Task...");
-
   const listItem = this.parentNode;
 
   listItem.children[0].name = "done-checkbox";
@@ -102,8 +93,6 @@ function taskCompleted() {
 }
 
 function taskIncomplete() {
-  console.log("Incomplete Task...");
-
   const listItem = this.parentNode;
 
   listItem.children[0].name = "todo-checkbox";
@@ -111,16 +100,10 @@ function taskIncomplete() {
   bindTaskEvents(listItem, taskCompleted);
 }
 
-function ajaxRequest() {
-  console.log("AJAX Request");
-}
-
 addButton.addEventListener("click", addTask);
-addButton.addEventListener("click", ajaxRequest);
+//TODO: implement ajaxRequest function addButton.addEventListener('click', ajaxRequest);
 
 function bindTaskEvents(taskListItem, checkBoxEventHandler) {
-  console.log("bind list item events");
-
   const checkBox = taskListItem.querySelector(".item__checkbox");
   const editButton = taskListItem.querySelector(".button--edit");
   const deleteButton = taskListItem.querySelector(".button--delete");
