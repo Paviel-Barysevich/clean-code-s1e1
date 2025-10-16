@@ -16,7 +16,7 @@
       <h1 class="hidden" role="banner">The Eisenhower matrix</h1>
       <img
         src="./eisenhower-matrix.jpg"
-        class="banner-image"
+        class="banner__image"
         alt="The matrix two by two has four squares: the first one has a name
         'DO', it's urgent and important; the second one has a name 'PLAN',
         it's not urgent but important; the third one has a name 'DELEGATE',
@@ -24,58 +24,83 @@
         it's neither urgent nor important"
       />
       <a
-        class="banner-link"
+        class="banner__link"
         href="https://goal-life.com/page/method/matrix-eisenhower"
       >
         Want more details?
       </a>
     </header>
     <main class="main">
-      <section aria-labelledby="heading-factory">
-        <h2 id="heading-factory" class="heading">Add Item</h2>
-        <div class="main-new-todo-wrapper">
-          <input id="main-new-todo" class="input task" type="text" />
-          <button class="button button-add" type="button">Add</button>
+      <section class="factory" aria-labelledby="heading-factory">
+        <h2 id="heading-factory" class="factory__heading heading">Add Item</h2>
+        <div class="factory__wrapper">
+          <input id="main-new-todo" class="factory__input task" type="text" />
+          <button class="factory__button button" type="button">Add</button>
         </div>
       </section>
-      <section aria-labelledby="heading-todo">
-        <h2 id="heading-todo" class="heading">Todo</h2>
-        <ul id="todo-list" class="list">
-          <li class="list-item">
-            <input class="input" type="checkbox" name="todo-checkbox" />
-            <label for="input-1" class="label task">Pay Bills</label>
-            <input id="input-1" class="input task" type="text" />
-            <button class="button button-edit" type="button">Edit</button>
-            <button class="button button-delete" type="button">
-              <img src="./remove.svg" class="img-delete" alt="delete button"/>
+      <section class="todos" aria-labelledby="heading-todo">
+        <h2 id="heading-todo" class="todos__heading heading">Todo</h2>
+        <ul id="todo-list" class="todos__list list">
+          <li class="list__item item">
+            <input
+              class="input item__checkbox"
+              type="checkbox"
+              name="todo-checkbox"
+            />
+            <label for="input-1" class="item__label task">Pay Bills</label>
+            <input id="input-1" class="item__input task" type="text" />
+            <button class="button button--edit" type="button">Edit</button>
+            <button class="button button--delete" type="button">
+              <img
+                src="./remove.svg"
+                class="button__image"
+                alt="delete button"
+              />
             </button>
           </li>
-          <li class="list-item is-active">
-            <input class="input" type="checkbox" name="todo-checkbox" />
-            <label for="input-2" class="label task">Go Shopping</label>
+          <li class="list__item item is-active">
+            <input
+              class="input item__checkbox"
+              type="checkbox"
+              name="todo-checkbox"
+            />
+            <label for="input-2" class="item__label task">Go Shopping</label>
             <input
               id="input-2"
-              class="input task"
+              class="item__input task"
               type="text"
               value="go shopping"
             />
-            <button class="button button-edit" type="button">Save</button>
-            <button class="button button-delete" type="button">
-              <img src="./remove.svg" class="img-delete" alt="delete button" />
+            <button class="button button--edit" type="button">Save</button>
+            <button class="button button--delete" type="button">
+              <img
+                src="./remove.svg"
+                class="button__image"
+                alt="delete button"
+              />
             </button>
           </li>
         </ul>
       </section>
-      <section aria-labelledby="heading-done">
-        <h2 id="heading-done" class="heading">Completed</h2>
-        <ul id="done-list" class="list">
-          <li class="list-item">
-            <input class="input" type="checkbox" name="done-checkbox" checked />
-            <label for="input-3" class="label task">See the Doctor</label>
-            <input id="input-3" class="input task" type="text" />
-            <button class="button button-edit" type="button">Edit</button>
-            <button class="button button-delete" type="button">
-              <img src="./remove.svg" class="img-delete" alt="delete button" />
+      <section class="done" aria-labelledby="heading-done">
+        <h2 id="heading-done" class="done__heading heading">Completed</h2>
+        <ul id="done-list" class="done__list list">
+          <li class="list__item item">
+            <input
+              class="input item__checkbox"
+              type="checkbox"
+              name="done-checkbox"
+              checked
+            />
+            <label for="input-3" class="item__label task">See the Doctor</label>
+            <input id="input-3" class="item__input task" type="text" />
+            <button class="button button--edit" type="button">Edit</button>
+            <button class="button button--delete" type="button">
+              <img
+                src="./remove.svg"
+                class="button__image"
+                alt="delete button"
+              />
             </button>
           </li>
         </ul>
