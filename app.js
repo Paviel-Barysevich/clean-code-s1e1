@@ -74,8 +74,8 @@ var editTask = function () {
 
   var listItem = this.parentNode;
 
-  var editInput = listItem.querySelector("input[type=text]");
-  var label = listItem.querySelector("label");
+  var editInput = listItem.querySelector(".input[type=text]");
+  var label = listItem.querySelector(".label");
   var editBtn = listItem.querySelector(".button-edit");
   var isActive = listItem.classList.contains("is-active");
   //If class of the parent is .is-active
@@ -137,9 +137,9 @@ addButton.addEventListener("click", ajaxRequest);
 var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   console.log("bind list item events");
   //select ListItems children
-  var checkBox = taskListItem.querySelector("input[type=checkbox]");
-  var editButton = taskListItem.querySelector("button.button-edit");
-  var deleteButton = taskListItem.querySelector("button.button-delete");
+  var checkBox = taskListItem.querySelector(".input[type=checkbox]");
+  var editButton = taskListItem.querySelector(".button-edit");
+  var deleteButton = taskListItem.querySelector(".button-delete");
 
   //Bind editTask to edit button.
   editButton.onclick = editTask;
