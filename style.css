@@ -36,14 +36,14 @@
   display: flex;
 }
 .list {
-  margin:0;
+  margin: 0;
   padding: 0px;
 }
 .list-item, .heading {
-  list-style:none;
+  list-style: none;
 }
-.input,.button{
-  outline:none;
+.input,.button {
+  outline: none;
 }
 .button {
   background: none;
@@ -116,7 +116,7 @@
   font-size: 18px;
   width: 226px;
 }
-.list-item >    .input[type="text"] {
+.list-item > .input[type="text"] {
   width: 226px
 }
 .img-delete {
@@ -136,14 +136,14 @@
 
 /* Edit Task */
 .list-item .input[type=text] {
-  display:none
+  display: none
 }
 
 .list-item:is(.is-active) .input[type=text] {
-  display:inline-block;
-  width:224px
+  display: inline-block;
+  width: 224px
 }
 
 .list-item:is(.is-active) .label {
-  display:none;
+  display: none;
 }
