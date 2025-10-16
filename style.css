@@ -20,10 +20,10 @@
   display: block;
   text-align: right;
 }
-.banner-image {
+.banner__image {
   width: 100%;
 }
-.banner-link {
+.banner__link {
   font-family: fantasy, cursive;
 }
 @media (max-width: 768px) {
@@ -41,18 +41,20 @@
   display: inline-block;
   flex-grow: 1;
 }
-.main-new-todo-wrapper {
+.factory__wrapper {
   display: flex;
 }
 .list {
   margin: 0;
   padding: 0px;
 }
-.list-item,
+.list__item,
 .heading {
   list-style: none;
 }
 .input,
+.factory__input,
+.item__input,
 .button {
   outline: none;
 }
@@ -78,7 +80,8 @@
   margin: 0;
   text-transform: uppercase;
 }
-.input[type="text"] {
+.factory__input,
+.item__input {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -90,7 +93,8 @@
   font-family: Lato, sans-serif;
   color: #888888;
 }
-.input[type="text"]:focus {
+.factory__input:focus,
+.item__input:focus {
   color: #333333;
 }
 /* New Task */
@@ -102,7 +106,7 @@
   width: 318px;
 }
 /* Task list */
-.list-item {
+.list__item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eeeeee;
@@ -110,45 +114,45 @@
   justify-content: space-between;
   align-items: center;
 }
-.list-item > * {
+.list__item > * {
   vertical-align: middle;
 }
-.list-item > .input[type="checkbox"] {
+.item__checkbox {
   margin: 0 10px;
 }
-.list-item > .label {
+.item__label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
   text-transform: capitalize;
 }
-.list-item > .input[type="text"] {
+.list__item > .item__input {
   width: 226px;
 }
-.img-delete {
+.button__image {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
-.img-delete:hover {
+.button__image:hover {
   transform: rotateZ(0);
 }
 /* Completed */
-#done-list .label {
+#done-list .item__label {
   text-decoration: line-through;
   color: #888888;
 }
 /* Edit Task */
-.list-item .input[type=text] {
+.list__item .item__input {
   display: none;
 }
-.list-item:is(.is-active) .input[type=text] {
+.list__item:is(.is-active) .item__input {
   display: inline-block;
   width: 224px;
   text-transform: capitalize;
 }
-.list-item:is(.is-active) .label {
+.list__item:is(.is-active) .item__label {
   display: none;
 }
 *:focus-visible {
