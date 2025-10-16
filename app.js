@@ -26,22 +26,32 @@ var createNewTaskElement = function (taskString) {
   var editButton = document.createElement("button"); //edit button
 
   //button.delete
-  var deleteButton = document.createElement("button"); //delete button
-  var deleteButtonImg = document.createElement("img"); //delete button image
+  var deleteButton = document.createElement('button'); //delete button
+  var deleteButtonImg = document.createElement('img'); //delete button image
+  const id = generateId();
 
+  listItem.className = "list-item";
   label.innerText = taskString;
-  label.className = "task";
+  label.className = 'label task';
+  label.htmlFor = `${id}`;
 
   //Each elements, needs appending
-  checkBox.type = "checkbox";
-  editInput.type = "text";
-  editInput.className = "task";
+  checkBox.type = 'checkbox';
+  checkBox.className = 'input';
+  checkBox.name='todo-checkbox';
+  editInput.id = `${id}`;
+  editInput.type = 'text';
+  editInput.className = 'input task';
 
   editButton.innerText = "Edit"; //innerText encodes special characters, HTML does not.
-  editButton.className = "button-edit";
+  editButton.className = "button button-edit";
+  editButton.type = "button";
 
-  deleteButton.className = "button-delete";
+  deleteButton.className = "button button-delete";
+  deleteButton.type = "button";
   deleteButtonImg.src = "./remove.svg";
+  deleteButtonImg.className = "img-delete";
+  deleteButtonImg.alt = "delete button";
   deleteButton.appendChild(deleteButtonImg);
 
   //and appending.
@@ -109,6 +119,8 @@ var taskCompleted = function () {
 
   //Append the task list item to the #done-list
   var listItem = this.parentNode;
+
+  listItem.children[0].name = "done-checkbox";
   completedTasksHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskIncomplete);
 };
@@ -119,6 +131,8 @@ var taskIncomplete = function () {
   //When the checkbox is unchecked
   //Append the task list item to the #todo-list.
   var listItem = this.parentNode;
+
+  listItem.children[0].name = "todo-checkbox";
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
 };
@@ -130,7 +144,6 @@ var ajaxRequest = function () {
 //The glue to hold it all together.
 
 //Set the click handler to the addTask function.
-addButton.onclick = addTask;
 addButton.addEventListener("click", addTask);
 addButton.addEventListener("click", ajaxRequest);
 
@@ -160,6 +173,19 @@ for (var i = 0; i < incompleteTaskHolder.children.length; i++) {
 for (var i = 0; i < completedTasksHolder.children.length; i++) {
   //bind events to list items chldren(tasksIncompleted)
   bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
+}
+
+function generateId() {
+  const date = new Date();
+  const ms = date.getMilliseconds();
+  const indexToSlice = 24;
+  const id = `${date
+    .toString()
+    .slice(0, indexToSlice)
+    .split(' ')
+    .join('-')}-${ms}`;
+
+  return id;
 }
 
 // Issues with usability don't get seen until they are in front of a human tester.
