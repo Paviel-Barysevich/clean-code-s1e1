@@ -21,7 +21,7 @@ body {
   .banner { text-align: center;
   }
 }
-.main-element {
+.main {
   display: block;
   width: 500px;
   margin: 0 auto 0;
@@ -31,7 +31,7 @@ body {
   display: inline-block;
   flex-grow: 1
 }
-.main-task-row-wrapper {
+.main-new-todo-wrapper {
   display: flex;
 }
 ul {
@@ -58,7 +58,7 @@ button:hover {
 }
 /* Heading */
 h3,
-label[for="main-new-task"] {
+label[for="main-new-todo"] {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -84,11 +84,11 @@ input[type="text"]:focus {
 }
 
 /* New Task */
-label[for="main-new-task"] {
+label[for="main-new-todo"] {
   display: block;
   margin: 0 0 20px;
 }
-input#main-new-task {
+input#main-new-todo {
   width: 318px;
 }
 
